@@ -26,9 +26,12 @@ class SublimationListener extends BlockListener {
 
         if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE) {
             // sublimate
+            // TODO: delay smoke? doesn't seem to show
             world.playEffect(player.getLocation(), Effect.SMOKE, 0);    
 
-            event.setCancelled(true);
+            block.setType(Material.AIR);
+            // gives back TODO: configurable
+            //event.setCancelled(true); 
         }
     }
 }
