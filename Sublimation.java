@@ -1,5 +1,5 @@
 
-package com.exphc.Sublimation;
+package me.exphc.Sublimation;
 
 import java.util.logging.Logger;
 
@@ -45,7 +45,7 @@ public class Sublimation extends JavaPlugin {
     BlockListener blockListener;
 
     public void onEnable() {
-        log.info("Enabling sublimation");
+        log.info("Sublimation enabled");
 
         if (!this.getConfig().contains("version")) {
             this.getConfig().options().copyDefaults(true);
@@ -59,6 +59,6 @@ public class Sublimation extends JavaPlugin {
     }
 
     public void onDisable() {
-        log.info("Disabling sublimation");
+        log.info("Sublimation disabled");
     }
 }

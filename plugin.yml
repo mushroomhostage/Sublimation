@@ -1,5 +1,5 @@
 name: Sublimation
-main: com.exphc.Sublimation.Sublimation
+main: me.exphc.Sublimation.Sublimation
 version: 1
 permissions:
     sublimation.*:
