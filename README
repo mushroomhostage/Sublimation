@@ -1,0 +1,13 @@
+Sublimation - ice vaporizes in the nether
+
+
+=== Permissions
+sublimation.bypass (false) - Allows you to place ice in the nether 
+
+=== Configuration
+consume (true)
+    If true, turns placed ice into air, removing from the player's inventory
+    If false, cancels event, giving the player their ice back
+
+smoke (true)
+    Generate smoke particles, representing the sublimated ice

@@ -25,7 +25,7 @@ class SublimationListener extends BlockListener {
         World world = block.getWorld();
 
         if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE && !player.hasPermission("sublimation.bypass")) {
-            if (plugin.getConfig().getBoolean("takeAway", true)) {
+            if (plugin.getConfig().getBoolean("consume", true)) {
                 block.setType(Material.AIR);
             } else {
                 // return to player
