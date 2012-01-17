@@ -25,13 +25,17 @@ class SublimationListener extends BlockListener {
         World world = block.getWorld();
 
         if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE && !player.hasPermission("sublimation.bypass")) {
-            // sublimate
-            // TODO: delay smoke? doesn't seem to show
-            world.playEffect(player.getLocation(), Effect.SMOKE, 0);    
+            if (plugin.getConfig().getBoolean("giveBack", false)) {
+                // return to player
+                event.setCancelled(true); 
+            } else {
+                // make air
+                block.setType(Material.AIR);
 
-            block.setType(Material.AIR);
-            // gives back TODO: configurable
-            //event.setCancelled(true); 
+                // sublimate
+                // TODO: delay smoke? doesn't seem to show
+                world.playEffect(player.getLocation(), Effect.SMOKE, 0);    
+            }
         }
     }
 }
@@ -42,6 +46,12 @@ public class Sublimation extends JavaPlugin {
 
     public void onEnable() {
         log.info("Enabling sublimation");
+
+        if (!this.getConfig().contains("version")) {
+            this.getConfig().options().copyDefaults(true);
+            saveConfig();
+        }
+
 
         blockListener = new SublimationListener(this);
 
