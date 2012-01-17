@@ -1,6 +1,6 @@
 name: Sublimation
 main: me.exphc.Sublimation.Sublimation
-version: 1
+version: 1.0
 permissions:
     sublimation.*:
         children: 

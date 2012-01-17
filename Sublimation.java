@@ -45,13 +45,10 @@ public class Sublimation extends JavaPlugin {
     BlockListener blockListener;
 
     public void onEnable() {
-        log.info("Sublimation enabled");
+        log.info(getDescription().getFullName() + " enabled");
 
-        if (!this.getConfig().contains("version")) {
-            this.getConfig().options().copyDefaults(true);
-            saveConfig();
-        }
-
+        this.getConfig().options().copyDefaults(true);
+        saveConfig();
 
         blockListener = new SublimationListener(this);
 
@@ -59,6 +56,6 @@ public class Sublimation extends JavaPlugin {
     }
 
     public void onDisable() {
-        log.info("Sublimation disabled");
+        log.info(getDescription().getFullName() + " disabled");
     }
 }
