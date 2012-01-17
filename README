@@ -1,5 +1,7 @@
-Sublimation - ice vaporizes in the nether
+Sublimation - ice vaporizes in The Nether
 
+Makes ice behave realistically in The Nether. When placed, it will turn into smoke,
+just like emptying a bucket of water.
 
 === Permissions
 sublimation.bypass (false) - Allows you to place ice in the nether 
@@ -11,3 +13,11 @@ consume (true)
 
 smoke (true)
     Generate smoke particles, representing the sublimated ice
+
+=== Notes
+Works great with ChangeSilkTouch to restore the behavior of 1.9 prereleases
+(get ice with the silk touch enchantment), without the abuse possible by
+placing ice and breaking it to get water in The Nether.
+
+
+
