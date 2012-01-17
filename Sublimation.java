@@ -25,13 +25,13 @@ class SublimationListener extends BlockListener {
         World world = block.getWorld();
 
         if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE && !player.hasPermission("sublimation.bypass")) {
-            if (plugin.getConfig().getBoolean("giveBack", false)) {
+            if (plugin.getConfig().getBoolean("takeAway", true)) {
+                block.setType(Material.AIR);
+            } else {
                 // return to player
                 event.setCancelled(true); 
-            } else {
-                // replace
-                block.setType(Material.AIR);
             }
+
             if (plugin.getConfig().getBoolean("smoke", true)) {
                 // turn into smoke
                 world.playEffect(block.getLocation(), Effect.SMOKE, 0);    
