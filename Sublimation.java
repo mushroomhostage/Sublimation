@@ -24,7 +24,7 @@ class SublimationListener extends BlockListener {
         Player player = event.getPlayer();
         World world = block.getWorld();
 
-        if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE) {
+        if (world.getEnvironment() == World.Environment.NETHER && block.getType() == Material.ICE && !player.hasPermission("sublimation.bypass")) {
             // sublimate
             // TODO: delay smoke? doesn't seem to show
             world.playEffect(player.getLocation(), Effect.SMOKE, 0);    

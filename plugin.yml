@@ -1,3 +1,11 @@
 name: Sublimation
 main: com.exphc.Sublimation.Sublimation
 version: 1
+permissions:
+    sublimation.*:
+        children: 
+            sublimation.bypass: true
+        default: false
+    sublimation.bypass:
+        description: Allows you to place ice in the nether
+        default: false
