@@ -12,6 +12,18 @@ import org.bukkit.entity.*;
 import org.bukkit.block.*;
 import org.bukkit.*;
 
+class SmokeTask implements Runnable {
+    Location location;
+
+    public SmokeTask(Location loc) {
+        location = loc;
+    }
+
+    public void run() {
+        location.getWorld().playEffect(location, Effect.SMOKE, 0);
+    }
+}
+
 class SublimationListener extends BlockListener {
     Plugin plugin;
 
@@ -29,12 +41,17 @@ class SublimationListener extends BlockListener {
                 // return to player
                 event.setCancelled(true); 
             } else {
+                Location location = block.getLocation();
+
                 // make air
                 block.setType(Material.AIR);
 
+                //SmokeTask smokeTask = new SmokeTask(location);
+                //Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, smokeTask, 0);
+
                 // sublimate
                 // TODO: delay smoke? doesn't seem to show
-                world.playEffect(player.getLocation(), Effect.SMOKE, 0);    
+                world.playEffect(block.getLocation(), Effect.SMOKE, 0);    
             }
         }
     }
