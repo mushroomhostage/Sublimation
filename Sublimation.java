@@ -52,7 +52,10 @@ class SublimationListener extends BlockListener {
         Player player = event.getPlayer();
         ItemStack tool = player.getItemInHand();
 
-        if (tool.containsEnchantment(Enchantment.SILK_TOUCH) && plugin.getConfig().getBoolean("collect")) {
+        if (tool.containsEnchantment(Enchantment.SILK_TOUCH) 
+            && plugin.getConfig().getBoolean("collect") 
+            && player.hasPermission("sublimation.collect")) {
+
             World world = block.getWorld();
             ItemStack drop = new ItemStack(block.getType(), 1);
 

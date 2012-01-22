@@ -5,7 +5,11 @@ permissions:
     sublimation.*:
         children: 
             sublimation.bypass: true
+            sublimation.collect: true
         default: false
     sublimation.bypass:
         description: Allows you to place ice in The Nether
         default: false
+    sublimation.collect:
+        description: Allows you to acquire ice mined with silk touch
+        default: true
