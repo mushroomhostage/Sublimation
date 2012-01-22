@@ -1,2 +1,3 @@
 consume: true
 smoke: true
+collect: true
