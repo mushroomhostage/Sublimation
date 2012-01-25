@@ -36,7 +36,7 @@ class SublimationListener extends BlockListener {
 
             if (plugin.getConfig().getBoolean("smoke", true)) {
                 // turn into smoke
-                world.playEffect(block.getLocation(), Effect.SMOKE, 0);    
+                world.playEffect(block.getLocation(), Effect.SMOKE, 0); 
             }
         }
     }
