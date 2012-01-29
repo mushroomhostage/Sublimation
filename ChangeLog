@@ -1,0 +1,10 @@
+? - 1.2
+    * Update for 1.1-R2 and new event system
+
+2012-01-22  - 1.1
+    * Added 'collect' option to drop ice mined with Silk Touch (note: default true!)
+    * Added sublimation.collect permissions node
+    * Tested with 1.1 snapshot (craftbukkit-1.1-R1-20120122.172420-82.jar), also still works with 1.0.1-R1
+
+2012-01-16  - 1.0
+    * Initial release

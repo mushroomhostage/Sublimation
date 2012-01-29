@@ -14,13 +14,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.*;
 
-class SublimationListener extends BlockListener {
+class SublimationPlaceListener implements Listener {
     Plugin plugin;
 
-    public SublimationListener(Plugin pl) {
+    public SublimationPlaceListener(Plugin pl) {
         plugin = pl;
+
+        Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onBlockPlace(BlockPlaceEvent event) {
         Block block = event.getBlockPlaced();
         Player player = event.getPlayer();
@@ -40,8 +43,20 @@ class SublimationListener extends BlockListener {
             }
         }
     }
+}
+
+class SublimationBreakListener implements Listener {
+    Plugin plugin;
+
+    public SublimationBreakListener(Plugin pl) {
+        plugin = pl;
+
+        Bukkit.getPluginManager().registerEvents(this, plugin);
+    }
+
 
     // drop ice
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onBlockBreak(BlockBreakEvent event) {
         Block block = event.getBlock();
 
@@ -69,23 +84,20 @@ class SublimationListener extends BlockListener {
 
 public class Sublimation extends JavaPlugin {
     Logger log = Logger.getLogger("Minecraft");
-    BlockListener blockListener;
+    SublimationPlaceListener placeListener;
+    SublimationBreakListener breakListener;
 
     public void onEnable() {
-        log.info(getDescription().getFullName() + " enabled");
-
         getConfig().options().copyDefaults(true);
         saveConfig();
 
-        blockListener = new SublimationListener(this);
+        placeListener = new SublimationPlaceListener(this);
 
-        Bukkit.getPluginManager().registerEvent(org.bukkit.event.Event.Type.BLOCK_PLACE, blockListener, org.bukkit.event.Event.Priority.Highest, this);
         if (getConfig().getBoolean("collect")) {
-            Bukkit.getPluginManager().registerEvent(org.bukkit.event.Event.Type.BLOCK_BREAK, blockListener, org.bukkit.event.Event.Priority.Highest, this);
+            breakListener = new SublimationBreakListener(this);
         }
     }
 
     public void onDisable() {
-        log.info(getDescription().getFullName() + " disabled");
     }
 }
