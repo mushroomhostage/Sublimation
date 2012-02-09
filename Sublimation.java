@@ -46,10 +46,10 @@ class SublimationPlaceListener implements Listener {
 }
 
 class SublimationBreakListener implements Listener {
-    Plugin plugin;
+    Sublimation plugin;
 
-    public SublimationBreakListener(Plugin pl) {
-        plugin = pl;
+    public SublimationBreakListener(Sublimation plugin) {
+        this.plugin = plugin;
 
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
@@ -67,7 +67,7 @@ class SublimationBreakListener implements Listener {
         Player player = event.getPlayer();
         ItemStack tool = player.getItemInHand();
 
-        if (tool.containsEnchantment(Enchantment.SILK_TOUCH) 
+        if (tool != null && tool.containsEnchantment(Enchantment.SILK_TOUCH) 
             && plugin.getConfig().getBoolean("collect") 
             && player.hasPermission("sublimation.collect")) {
 
@@ -77,13 +77,16 @@ class SublimationBreakListener implements Listener {
             world.dropItemNaturally(block.getLocation(), drop);
 
             block.setType(Material.AIR);
-            // do not cancel the event, so that it still uses up tool durability
+            // we would like to NOT cancel event, since the block DID in fact break,
+            // BUT, some modded craftbukkits (1.1-R3+MLMP+MCF+IC2) will NPE if we don't!
+            event.setCancelled(true);
+            // however, durability is still used up
         }
     }
 }
 
 public class Sublimation extends JavaPlugin {
-    Logger log = Logger.getLogger("Minecraft");
+    public Logger log = Logger.getLogger("Minecraft");
     SublimationPlaceListener placeListener;
     SublimationBreakListener breakListener;
 
