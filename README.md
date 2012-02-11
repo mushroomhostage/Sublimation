@@ -4,10 +4,18 @@ Remember in the Minecraft 1.9 beta prereleases, when the Silk Touch enchantment
 was first introduced, you could legitimately obtain ice? Minecraft 1.0 removed this ability
 as it was too overpowered: you could break ice and flood The Nether!
 
-**Sublimation** gives you the best of both worlds: silk touch works on ice,
+*Sublimation* gives you the best of both worlds: silk touch works on ice,
 but if you attempt to place ice in The Nether, it will vaporize immediately
 with a puff of smoke, just like emptying a bucket of water.
 Much more realistic, right?
+
+**Notice: Much of the functionality of this plugin has been merged into
+[EnchantMore](http://dev.bukkit.org/server-mods/enchantmore/), as
+the Pickaxe + Silk Touch II enchantment = harvest ice, and an 
+optional *sublimateIce* configuration option.** You can still use
+this Sublimation plugin if all you want is to collect ice, but
+[EnchantMore](http://dev.bukkit.org/server-mods/enchantmore/)
+offers many more useful features.
 
 ### Permissions 
 sublimation.bypass (false) - Allows you to place ice in the nether
