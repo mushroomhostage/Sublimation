@@ -48,4 +48,4 @@ events are not registered.
 ### See also
 Want to make Silk Touch even more useful? Check out [SilkSpawners](http://dev.bukkit.org/server-mods/silkspawners/).
 
-
+***[Fork me on GitHub](https://github.com/mushroomhostage/Sublimation)***
