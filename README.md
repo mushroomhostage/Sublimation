@@ -1,3 +1,14 @@
+***This this plugin has been merged into
+[EnchantMore](http://dev.bukkit.org/server-mods/enchantmore/)!
+If you want the same behavior as the original Sublimation plugin
+below, disable all other effects except for Pickaxe + Silk Touch,
+then minLevel:1, and sublimateIce:true. Since EnchantMore
+encompasses the the functionality of Sublimation, this plugin
+will no longer be maintained.***
+
+---
+---
+
 Sublimation - silk touch ice, no longer overpowered
 
 Remember in the Minecraft 1.9 beta prereleases, when the Silk Touch enchantment
@@ -9,13 +20,6 @@ but if you attempt to place ice in The Nether, it will vaporize immediately
 with a puff of smoke, just like emptying a bucket of water.
 Much more realistic, right?
 
-**Notice: Much of the functionality of this plugin has been merged into
-[EnchantMore](http://dev.bukkit.org/server-mods/enchantmore/), as
-the Pickaxe + Silk Touch II enchantment = harvest ice, and an 
-optional *sublimateIce* configuration option.** You can still use
-this Sublimation plugin if all you want is to collect ice, but
-[EnchantMore](http://dev.bukkit.org/server-mods/enchantmore/)
-offers many more useful features.
 
 ### Permissions 
 sublimation.bypass (false) - Allows you to place ice in the nether
